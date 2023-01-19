@@ -1,0 +1,14 @@
+div > *
+/* Selects everything inside a category */
+
+:nth-child
+/* multiple elements* (list, table, etc) */
+
+li + p
+/* give characteristics to elements after what goes before the + (in this case to all the p right after li */
+
+::after {content:""}
+/* adds something after element mentioned before ::*/
+
+var(--top-smooth);
+/* call variables from root{} see in css.txt */

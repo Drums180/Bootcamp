@@ -1,0 +1,66 @@
+
+-->
+button:hover /* + something you want to show */ {
+  background-color: #772014;
+  color: #fff;
+}
+/* The user's cursor is positioned over the element */
+---
+
+-->
+button:active {
+  font-size: 180%;
+  box-shadow: 0 0 10px #000 inset;
+}
+/* The user is actively pressing down on the element */
+---
+
+-->
+button:focus {
+  outline: none;
+  border-color: #8ac4ff;
+}
+/* The element is currently in focus, either by tabbing to or clicking on it */
+---
+
+-->
+.variablex a {
+  color: x;
+  text-decoration: none;
+}
+/* to alter elements of text inside a list */
+---
+
+-->
+/* Add complementary text */
+h1::after {
+  font-family: Impact;
+  content: 'Pseudo Elements';
+  color: #8ac4ff;
+  margin-left: 5px;
+}
+---
+
+-->
+/* searches the element Thant ends with the text in ""*/
+a[href$=".css"]
+---
+
+-->
+/* limit / changes certain variables if the screen size changes (key for adapting designs to mobile devices)*/
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+---
+
+-->
+/* lets you define variables in order to use them later with pseudocode (find in pseudocode.txt)*/
+:root {
+  --dark: #13293d;
+  --light: #fff;
+  --navlink-color: #b9c6ae;
+  --smooth: 50px;
+  --top-smooth: 50px 50px 0px 0px;
+}
+---

@@ -1,0 +1,12 @@
+-- BRANCHES --
+git branch "bug/solve-button" ("NAME OF BRANCH" without "")
+
+git checkout 'bug/solve-button' (´move to branch') // move to existing branch
+
+git checkout -b "feature/my-feature" ("NAME OF BRANCH" without "") // create and move to branch
+
+git merge "feature/my-feature" ("NAME OF BRANCH" without "")
+
+git branch -d "fature/myfeature" ("NAME OF BRANCH" without "")
+
+

@@ -1,0 +1,133 @@
+---------------------------------
+>>>VARIABLES WITH PARTS OF HTML<<<
+console.log("Document Body: ")
+console.log(document.body);
+
+console.log("Children of Document Body: ")
+console.log(document.body.children);
+
+console.log("Second child of body: ")
+console.log(document.body.children[1]);
+
+console.log("First child of the ul: ")
+console.log(document.body.children[1].children[0]);
+
+// Accessing element by id
+var firstChildUl = document.getElementById("first-child-ul");
+
+// Setting style of element
+firstChildUl.style.color = "#e97451";
+firstChildUl.style.fontSize = "98px";
+
+---------------------------------
+>>>MULTIPLE PARTS OF HTML IN ONE VARIABLE<<<
+// Access multiple elements using .querySelectorAll()
+ var divTags = document.querySelectorAll("div");
+ var pTags = document.querySelectorAll("p");
+ var imgEl = document.querySelectorAll("img");
+
+// Access element by ID using .querySelector()
+ var changeP = document.querySelector("#change2");
+
+// Sets first pTags to have a font-size of 40px
+ pTags[0].setAttribute("style", "font-size: 40px;");
+
+// Sets changeP to have multiple style attributes
+ changeP.setAttribute("style", "font-size: 25px; font-weight: bold; text-decoration:underline; ");
+
+ // Sets image source of the first image
+ imgEl[0].setAttribute("src", "./assets/images/image_1.png");
+
+// Adds size and width styling to image
+ imgEl[0].setAttribute("style", "width:50%");
+
+// Loops through divTags to set each one to have the color blue and the font size of 30px
+for (var i = 0; i < divTags.length; i++) {
+  divTags[i].setAttribute("style", "color:blue; font-size: 30px");
+ }
+
+---------------------------------
+>>>MULTIPLE PARTS OF HTML IN ONE VARIABLE<<<
+// Stores user response in variable
+var tagName = prompt("Please enter an HTML Tag (ex. h1, h2, p, div):", "enter tag");
+
+if (tagName !== "h1" && tagName !== "h2" && tagName !== "p" && tagName !== "div") {
+  alert("please enter a valid tag");
+} else {
+  // Creates element based on tag entered by user
+  var tag = document.createElement(tagName);
+
+  // Adds text content to created tag
+  tag.textContent = "This was made via prompts. It's a " + tagName + ".";
+  
+  // Appends tag as child of document body
+  document.body.appendChild(tag);
+}
+
+---------------------------------
+>>>DATASETS<<<
+
+var nextTag = confirm("Would you like to add another tag?");
+
+if (nextTag === true) {
+  var secondTagName = prompt("Please enter another  HTML Tag (ex. h1, h2, p, div):", "enter tag here");
+  if(secondTagName !== "h1" && secondTagName !== "h2" && secondTagName !== "p" && secondTagName !== "div") {
+    alert("please enter a valid tag");
+  } else {
+    var secondTag = document.createElement(secondTagName);
+    secondTag.textContent = "This is our second tag via prompts, it's a " + secondTagName + ".";
+    document.body.appendChild(secondTag);
+  }
+}
+
+
+var imageContainer = document.querySelector(".img-container");
+
+// Listen for any clicks within the img-container div
+imageContainer.addEventListener("click", function(event) {
+  var element = event.target;
+
+  // Check if the clicked element was an image
+  if (element.matches("img")) {
+    // Get the current value of the image's data-state attribute
+    var state = element.getAttribute("data-state");
+
+    if (state === "still") {
+      // Change the data-state attribute's value
+      // There are two different ways this attribute can be set
+      element.dataset.state = "animate";
+      element.setAttribute("data-state", "animate");
+
+      // Update the image's source to the string being stored in the data-animate attribute
+      element.setAttribute("src", element.dataset.animate);
+    } else {
+      // Change the attributes back to their non-animated values
+      element.dataset.state = "still";
+      element.setAttribute("src", element.dataset.still);
+    }
+  }
+});
+
+---------------------------------
+>>>JAVASCRIPT OBJECT NOTATION<<<
+var firstNameInput = document.querySelector("#first-name");
+var lastNameInput = document.querySelector("#last-name");
+var emailInput = document.querySelector("#email");
+var passwordInput = document.querySelector("#password");
+var signUpButton = document.querySelector("#sign-up");
+
+signUpButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  
+  // TODO: Create user object from submission
+  var signup = {
+    firstName: firstNameInput.value,
+    last: lastNameInput.value,
+    email: emailInput.value,
+    password: passwordInput.value
+  }
+
+  // TODO: Set new submission to local storage 
+  localStorage.setItem("signup",JSON.stringify(signup));
+
+});

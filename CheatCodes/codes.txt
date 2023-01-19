@@ -1,0 +1,11 @@
+Código para un CLI
+
+open : abre archivo
+pwd : te dice donde estás
+ls : te muestra que otros archivos hay
+cd : cambias de directorio
+mkdir : crear un directorio
+cd .. : retrocedes un nivel en directorios
+touch : crear un archivo dentro de un directorio
+
+key ssh : 180203Da#
