@@ -1,4 +1,3 @@
-const Employee = require("./lib/employee");
 const Manager = require("./lib/manager");
 const Intern = require("./lib/intern");
 const Engineer = require("./lib/engineer");
@@ -150,7 +149,7 @@ function generateHtml(teamMembers) {
     let extraLabel = '';
     
     if (member.getRole() === 'Engineer') {
-      extraInfo = member.getGithub();
+      extraInfo = '<a href="https://github.com/' + member.getGithub() + '">' + member.getGithub() + '</a>';
       extraLabel = 'GitHub';
     } else if (member.getRole() === 'Intern') {
       extraInfo = member.getSchool();
@@ -183,7 +182,7 @@ function generateHtml(teamMembers) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Team Roster</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="./src/style.css">
     </head>
     <body>
       <h1>My Team</h1>
